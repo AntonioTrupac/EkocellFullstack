@@ -1,0 +1,25 @@
+---
+import ContactInfo from "@components/ContactInfo/ContactInfo.astro";
+import Form from "@components/Form/Form";
+import Partners from "@components/Partners.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="Kontakt | Ekocell">
+  <section
+    onclick="addSomething()"
+    class="px-6 py-10 md:px-10 xl:px-20 max-w-7xl m-auto"
+  >
+    <div class="flex flex-col md:flex-row md:gap-6">
+      <ContactInfo />
+      <Form client:load />
+    </div>
+    <Partners />
+  </section>
+</Layout>
+
+<script is:inline>
+  function addSomething() {
+    console.log("Hello World");
+  }
+</script>

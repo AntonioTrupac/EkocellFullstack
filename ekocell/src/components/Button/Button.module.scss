@@ -1,0 +1,14 @@
+@import '../../scss/_variables.scss';
+
+.submit-button {
+  /* Remove outline for non-keyboard :focus */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 4px rgba($secondary, 0.4);
+    outline: 1px solid $primary-color;
+    outline-color: rgba($color: $primary-color, $alpha: 0.9);
+  }
+}

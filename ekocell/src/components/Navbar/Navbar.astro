@@ -1,0 +1,25 @@
+---
+import styles from "./Navbar.module.scss";
+import MobileNavbar from "@components/Navbar/MobileNavbar";
+---
+
+<header class="bg-secondary px-6">
+  <nav class:list={[styles.root, "justify-between w-full"]}>
+    <a href="#" class="flex align-center">
+      <img
+        src="./logo.svg"
+        alt="Ekocell Logo"
+        class="lg:h-[65px] sm:h-[55px] h-[40px] w-full"
+      />
+    </a>
+
+    <div class="lg:flex align-center h-full hidden">
+      <a href="/" class={styles.link}>Naslovna</a>
+      <a href="/onama" class={styles.link}>O nama</a>
+      <a href="/izolacija" class={styles.link}>Izolacija</a>
+      <a href="/kontakt" class={styles.link}>Kontakt</a>
+    </div>
+  </nav>
+
+  <MobileNavbar client:media="(max-width: 1024px)" />
+</header>
