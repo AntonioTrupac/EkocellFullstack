@@ -1,6 +1,7 @@
 ---
 import ContactInfo from "@components/ContactInfo/ContactInfo.astro";
 import Form from "@components/Form/Form";
+import GoogleMap from "@components/GoogleMap.astro";
 import Partners from "@components/Partners.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
@@ -14,6 +15,9 @@ import Layout from "src/layouts/Layout.astro";
       <ContactInfo />
       <Form client:load />
     </div>
+
+    <GoogleMap />
+
     <Partners />
   </section>
 </Layout>
