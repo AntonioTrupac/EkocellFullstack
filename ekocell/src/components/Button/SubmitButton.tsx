@@ -20,7 +20,8 @@ const SubmitButton = ({
         "bg-button text-white rounded-[4px] flex items-end justify-end",
         classes["submit-button"],
         [size === "s" && "px-4 py-1"],
-        [size === "m" && "px-6 py-2"]
+        [size === "m" && "px-6 py-2"],
+        [props.disabled && "bg-disabled text-white"]
       )}
       type={type}
       {...props}

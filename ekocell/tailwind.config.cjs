@@ -11,6 +11,7 @@ module.exports = {
         input: 'rgba(0, 82, 97, 0.3)',
         label: 'rgba(0, 82, 97, 0.8)',
         button: 'rgba(0, 82, 97, 0.7)',
+        disabled: 'rgba(0, 82, 97, 0.4)',
       },
     },
   },

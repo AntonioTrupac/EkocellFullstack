@@ -14,7 +14,11 @@ export type IFormValue = {
 };
 
 const Form = () => {
-  const { register, handleSubmit } = useForm<IFormValue>({
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<IFormValue>({
     defaultValues: {
       ime: "",
       prezime: "",
@@ -23,10 +27,11 @@ const Form = () => {
       upit: "",
     },
   });
-  const onSubmit: SubmitHandler<IFormValue> = (data, e?: any) => {
+
+  const onSubmit: SubmitHandler<IFormValue> = async (data, e?: any) => {
     e?.preventDefault();
 
-    emailjs.send(
+    await emailjs.send(
       "service_5m6o4jt",
       "template_xbl2925",
       data,
@@ -79,7 +84,12 @@ const Form = () => {
           register={register}
         />
 
-        <SubmitButton aria-label="Pošaljite" className="mt-6" type="submit">
+        <SubmitButton
+          aria-label="Pošaljite"
+          className="mt-6"
+          type="submit"
+          disabled={isSubmitting}
+        >
           Pošaljite
         </SubmitButton>
       </form>
