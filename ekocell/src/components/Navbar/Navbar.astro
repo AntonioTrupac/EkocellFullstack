@@ -3,11 +3,11 @@ import styles from "./Navbar.module.scss";
 import MobileNavbar from "@components/Navbar/MobileNavbar";
 ---
 
-<header class="bg-secondary px-6">
+<header class="bg-secondary px-6 sticky top-0 z-50">
   <nav class:list={[styles.root, "justify-between w-full"]}>
     <a href="#" class="flex align-center">
       <img
-        src="./logo.svg"
+        src="/logo.svg"
         alt="Ekocell Logo"
         class="lg:h-[65px] sm:h-[55px] h-[40px] w-full"
       />
