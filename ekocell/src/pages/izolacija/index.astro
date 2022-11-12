@@ -4,8 +4,7 @@ import Heading1 from "@components/Heading/Heading1.astro";
 import { getOnama } from "src/api/api";
 import Layout from "src/layouts/Layout.astro";
 
-const oNama = await getOnama();
-console.log(oNama);
+const data = await getOnama();
 ---
 
 <Layout title="Ekocell | Izolacija">
@@ -13,7 +12,7 @@ console.log(oNama);
     <Heading1 className="mt-10">Fasadne i pokrovne ploče</Heading1>
 
     <div>
-      <!-- <Card /> -->
+      {data?.naslov}
     </div>
   </section>
 </Layout>

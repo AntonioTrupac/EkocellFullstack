@@ -16,7 +16,6 @@ payload.init({
   express: app,
   onInit: () => {
     payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
-    payload.getAPIURL()
   },
 })
 
