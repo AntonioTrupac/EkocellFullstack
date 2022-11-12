@@ -1,5 +1,19 @@
 ---
+// import Card from "@components/Card.astro";
+import Heading1 from "@components/Heading/Heading1.astro";
+import { getOnama } from "src/api/api";
 import Layout from "src/layouts/Layout.astro";
+
+const oNama = await getOnama();
+console.log(oNama);
 ---
 
-<Layout title="Ekocell | Izolacija">Izolacija</Layout>
+<Layout title="Ekocell | Izolacija">
+  <section class="">
+    <Heading1 className="mt-10">Fasadne i pokrovne ploče</Heading1>
+
+    <div>
+      <!-- <Card /> -->
+    </div>
+  </section>
+</Layout>
