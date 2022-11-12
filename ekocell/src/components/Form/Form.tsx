@@ -1,6 +1,7 @@
 import SubmitButton from "@components/Button/SubmitButton";
 import Input from "@components/Input/Input";
 import TextArea from "@components/Input/TextArea";
+import emailjs from "emailjs-com";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
@@ -22,15 +23,21 @@ const Form = () => {
       upit: "",
     },
   });
-
   const onSubmit: SubmitHandler<IFormValue> = (data, e?: any) => {
     e?.preventDefault();
-    alert(JSON.stringify(data));
+
+    emailjs.send(
+      "service_5m6o4jt",
+      "template_xbl2925",
+      data,
+      "_7lXmENQQ7H4qw_La"
+    );
+
     e?.target.reset();
   };
 
   return (
-    <div className="mt-10 md:mt-0 flex-grow">
+    <div className="mt-10 md:mt-0 grow">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col items-end"
@@ -72,7 +79,7 @@ const Form = () => {
           register={register}
         />
 
-        <SubmitButton className="mt-6" type="submit">
+        <SubmitButton aria-label="Pošaljite" className="mt-6" type="submit">
           Pošaljite
         </SubmitButton>
       </form>
