@@ -1,6 +1,6 @@
-# backend
+# payload
 
-This project was created using create-payload-app using the ts-blank template.
+This project was created using create-payload-app using the ts-todo template.
 
 ## How to Use
 

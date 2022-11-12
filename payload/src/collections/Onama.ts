@@ -18,11 +18,14 @@ const Onama: CollectionConfig = {
       label: "O nama",
       type: "richText",
       required: true,
-      access: {
-        read: () => true,
-      }
     },
   ],
+  access: {
+    create: () => true,
+    read: () => true,
+    update: () => true,
+    delete: () => true,
+  },
   upload: true,
 };
 
