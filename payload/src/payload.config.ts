@@ -1,8 +1,8 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
-import TodoLists from './collections/TodoLists';
 import Users from './collections/Users';
 import Onama from './globals/Onama';
+import Categories from './collections/Categories';
 
 export default buildConfig({
   serverURL: 'http://localhost:3100',
@@ -14,8 +14,8 @@ export default buildConfig({
     api: "/api",
   },
   collections: [
-    TodoLists,
-    Users
+    Categories,
+    Users,
   ],
   globals:[
     Onama
