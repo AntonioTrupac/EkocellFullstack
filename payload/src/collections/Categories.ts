@@ -33,7 +33,8 @@ const Categories: CollectionConfig = {
           type: 'text',
         },
         {
-          name: 'kratki opis',
+          name: 'kratkiopis',
+          label: "Kratki opis",
           type: "text"
         },
         {
@@ -41,7 +42,8 @@ const Categories: CollectionConfig = {
           type: "textarea"
         },
         {
-          name: 'specifikacije i prednosti',
+          name: 'specifikacijeiprednost',
+          label: 'Specifikacije i prednosti',
           type: 'array',
           fields: [
             {
