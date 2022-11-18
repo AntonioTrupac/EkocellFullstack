@@ -1,21 +1,21 @@
 ---
 export interface Props {
-  title: string;
-  body: string;
+  title?: string;
+  shortDescription?: string;
   href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, shortDescription } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-card h-full">
   <a href={href}>
     <h2>
       {title}
       <span>&rarr;</span>
     </h2>
     <p>
-      {body}
+      {shortDescription}
     </p>
   </a>
 </li>

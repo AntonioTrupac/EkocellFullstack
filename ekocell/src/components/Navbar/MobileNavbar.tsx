@@ -12,9 +12,9 @@ const MobileNavbar = () => {
         className="rounded-[50%] active:bg-tertiary p-1"
       >
         {isClicked ? (
-          <img src="./close.svg" alt="Close menu" width={35} height={35} />
+          <img src="/close.svg" alt="Close menu" width={35} height={35} />
         ) : (
-          <img src="./menu.svg" alt="Open menu" width={35} height={35} />
+          <img src="/menu.svg" alt="Open menu" width={35} height={35} />
         )}
       </button>
 

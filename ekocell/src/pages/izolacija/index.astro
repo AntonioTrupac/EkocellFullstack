@@ -1,18 +1,25 @@
 ---
 // import Card from "@components/Card.astro";
+import Card from "@components/Card.astro";
 import Heading1 from "@components/Heading/Heading1.astro";
-import { getOnama } from "src/api/api";
+import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
 
-const data = await getOnama();
+const categories = await getCategories();
 ---
 
 <Layout title="Ekocell | Izolacija">
-  <section class="">
-    <Heading1 className="mt-10">Fasadne i pokrovne ploče</Heading1>
+  <section class="lg:max-w-7xl m-auto">
+    <Heading1 className="mt-10">{categories.title}</Heading1>
 
-    <div>
-      {data?.naslov}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 m-10">
+      {
+        categories.category.map((c) => (
+          <ul class="h-full">
+            <Card title={c.ime} shortDescription={c.kratkiopis} href="" />
+          </ul>
+        ))
+      }
     </div>
   </section>
 </Layout>

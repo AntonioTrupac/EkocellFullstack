@@ -8,14 +8,36 @@
 export interface Config {}
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "todos".
+ * via the `definition` "onama".
  */
-export interface Todo {
+export interface Onama {
   id: string;
-  listName?: string;
-  tasks: {
-    name?: string;
-    complete?: boolean;
+  naslov: string;
+  description: {
+    [k: string]: unknown;
+  }[];
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Kategorija {
+  id: string;
+  title?: string;
+  category: {
+    slug: string;
+    ime?: string;
+    kratkiopis?: string;
+    opis?: string;
+    specifikacijeiprednost: {
+      specifikacija?: {
+        [k: string]: unknown;
+      }[];
+      prednosti?: {
+        [k: string]: unknown;
+      }[];
+      id?: string;
+    }[];
     id?: string;
   }[];
   createdAt: string;
@@ -32,25 +54,6 @@ export interface User {
   resetPasswordExpiration?: string;
   loginAttempts?: number;
   lockUntil?: string;
-  createdAt: string;
-  updatedAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "onama".
- */
-export interface ONama {
-  id: string;
-  naslov: string;
-  description: {
-    [k: string]: unknown;
-  }[];
-  url?: string;
-  filename?: string;
-  mimeType?: string;
-  filesize?: number;
-  width?: number;
-  height?: number;
   createdAt: string;
   updatedAt: string;
 }

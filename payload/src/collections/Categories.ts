@@ -3,12 +3,12 @@ import { CollectionConfig } from 'payload/types';
 const Categories: CollectionConfig = {
   slug: 'categories',
   labels: {
-    singular: "Kategorija",
-    plural: "Kategorije",
+    singular: "kategorija",
+    plural: "kategorije",
   },
   admin: {
     defaultColumns: ['title', 'category', 'updatedAt'],
-    useAsTitle: 'listName',
+    // useAsTitle: 'kategorije',
   },
   access: {
     read: () => true,

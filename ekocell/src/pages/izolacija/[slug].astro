@@ -1,0 +1,20 @@
+---
+import { getCategories } from "src/api/getCategories";
+import Layout from "src/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const data = await getCategories();
+
+  return data.category.map((c) => {
+    return {
+      params: { slug: c.slug },
+      props: { opis: c.opis, ime: c.ime },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { opis, ime } = Astro.props;
+---
+
+<Layout title="Ekocell | Egger Izolacija">{slug} : {ime}</Layout>
