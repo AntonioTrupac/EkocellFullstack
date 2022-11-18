@@ -17,4 +17,8 @@ const { slug } = Astro.params;
 const { opis, ime } = Astro.props;
 ---
 
-<Layout title="Ekocell | Egger Izolacija">{slug} : {ime}</Layout>
+<Layout title="Ekocell | Egger Izolacija"
+  >{slug} : {ime}
+
+  <div>{opis}</div>
+</Layout>

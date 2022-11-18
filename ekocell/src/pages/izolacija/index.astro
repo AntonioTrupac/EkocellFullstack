@@ -1,6 +1,6 @@
 ---
 // import Card from "@components/Card.astro";
-import Card from "@components/Card.astro";
+import Card from "@components/Card/Card.astro";
 import Heading1 from "@components/Heading/Heading1.astro";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
@@ -16,7 +16,11 @@ const categories = await getCategories();
       {
         categories.category.map((c) => (
           <ul class="h-full">
-            <Card title={c.ime} shortDescription={c.kratkiopis} href="" />
+            <Card
+              title={c.ime}
+              shortDescription={c.kratkiopis}
+              href={`izolacija/${c.slug}`}
+            />
           </ul>
         ))
       }
