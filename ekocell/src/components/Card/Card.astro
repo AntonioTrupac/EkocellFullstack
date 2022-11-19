@@ -14,17 +14,17 @@ const { href, title, shortDescription } = Astro.props;
   class:list={[classes["link-card"], "h-full flex flex-col rounded-lg border"]}
 >
   <div class="p-3">
-    <img class="w-full h-auto rounded" src="/placeholder.jpg" alt="" />
+    <img class="aspect-video rounded" src="/placeholder.jpg" alt="" />
   </div>
 
   <div class="p-3">
-    <h2 class="font-medium text-lg mb-2 transition-all">
+    <h2 class="font-medium text-lg mb-2">
       <a class={classes.link} href={href}>
-        <span
-          >{title}
-          &rarr;</span
-        >
+        {title}
+        &rarr;
       </a>
+
+      <a class={classes["sr-only"]} href={href}>{title}</a>
     </h2>
 
     <p>
