@@ -1,6 +1,21 @@
 ---
+import RichText from "@components/RichText.astro";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
+
+type SpecifikacijeIPredonsti = {
+  specifikacija?:
+    | {
+        [k: string]: unknown;
+      }[]
+    | undefined;
+  prednosti?:
+    | {
+        [k: string]: unknown;
+      }[]
+    | undefined;
+  id?: string | undefined;
+};
 
 export async function getStaticPaths() {
   const data = await getCategories();
@@ -8,17 +23,29 @@ export async function getStaticPaths() {
   return data.category.map((c) => {
     return {
       params: { slug: c.slug },
-      props: { opis: c.opis, ime: c.ime },
+      props: {
+        opis: c.opis,
+        ime: c.ime,
+        specifikacijePrednost: c.specifikacijeiprednost,
+      },
     };
   });
 }
 
 const { slug } = Astro.params;
-const { opis, ime } = Astro.props;
+const { opis, ime, specifikacijePrednost } = Astro.props;
+
+console.log(specifikacijePrednost);
 ---
 
 <Layout title="Ekocell | Egger Izolacija"
   >{slug} : {ime}
 
-  <div>{opis}</div>
+  {opis}
+
+  {
+    specifikacijePrednost.map((s: any) => {
+      return <RichText richText={s.specifikacija} />;
+    })
+  }
 </Layout>

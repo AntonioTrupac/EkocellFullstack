@@ -27,7 +27,10 @@ export async function getCategories() {
               ime
               kratkiopis
               opis
-
+              specifikacijeiprednost {
+                specifikacija
+                prednosti
+              }
             }
           }
         }
