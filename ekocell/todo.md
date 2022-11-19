@@ -2,8 +2,10 @@
 
 Create mobile and tablet design {start:2022-10-16T18:50:48} {cm:2022-10-16} {duration:<1m}
 
-Add animation to mobile dropdown
+Type: BUG => Add animation to mobile dropdown
 
-Create contact page
+Create contact page {cm:2022-11-19}
 
 Create about us page
+
+Type: BUG => animation for card title link is not working
