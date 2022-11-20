@@ -3,6 +3,7 @@ import path from 'path';
 import Users from './collections/Users';
 import Onama from './globals/Onama';
 import Categories from './collections/Categories';
+import Media from './collections/Media';
 
 export default buildConfig({
   serverURL: 'http://localhost:3100',
@@ -16,6 +17,7 @@ export default buildConfig({
   collections: [
     Categories,
     Users,
+    Media
   ],
   globals:[
     Onama

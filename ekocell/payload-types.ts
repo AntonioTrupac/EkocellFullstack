@@ -29,6 +29,12 @@ export interface Kategorija {
     ime?: string;
     kratkiopis?: string;
     opis?: string;
+    categoryImages: {
+      mainImage: string | Media;
+      gridImageOne: string | Media;
+      gridImageTwo: string | Media;
+      id?: string;
+    }[];
     specifikacije_i_prednost: {
       specifikacija?: {
         [k: string]: unknown;
@@ -40,6 +46,22 @@ export interface Kategorija {
     }[];
     id?: string;
   }[];
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: string;
+  alt?: string;
+  url?: string;
+  filename?: string;
+  mimeType?: string;
+  filesize?: number;
+  width?: number;
+  height?: number;
   createdAt: string;
   updatedAt: string;
 }

@@ -16,28 +16,47 @@ export async function getStaticPaths() {
       props: {
         opis: c.opis,
         ime: c.ime,
+        categoryImages: c.categoryImages,
         specifikacijePrednost: c.specifikacije_i_prednost,
       },
     };
   });
 }
 
-const { slug } = Astro.params;
-const { opis, ime, specifikacijePrednost } = Astro.props;
+const { opis, ime, specifikacijePrednost, categoryImages } = Astro.props;
 
 const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
 ---
 
 <Layout title="Ekocell | Egger Izolacija">
-  <section class="xl:max-w-7xl m-auto mt-10">
-    <h1>{slug}</h1> : {ime}
+  <section class="xl:max-w-7xl m-auto mt-10 px-5 md:px-10">
+    <div>
+      <h1
+        class="lg:text-6xl text-5xl leading-snug lg:leading-normal mb-2 text-slate-800"
+      >
+        {ime}
+      </h1>
 
-    {opis}
-
+      <p class="text-slate-600">{opis}</p>
+    </div>
     {
-      content.map(
-        (s: any) => s.specifikacija && <RichText richText={s.specifikacija} />
+      categoryImages.map(
+        (ci: any) =>
+          ci.mainImage && (
+            <img
+              src={ci.mainImage.url}
+              alt={ci.mainImage.alt}
+              class="w-full mt-10"
+            />
+          )
       )
     }
+    <div>
+      {
+        content.map(
+          (s: any) => s.specifikacija && <RichText richText={s.specifikacija} />
+        )
+      }
+    </div>
   </section>
 </Layout>
