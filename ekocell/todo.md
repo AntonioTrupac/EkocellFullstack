@@ -4,6 +4,8 @@ Create mobile and tablet design {start:2022-10-16T18:50:48} {cm:2022-10-16} {dur
 
 Type: BUG => Add animation to mobile dropdown
 
+Type: IMPROVEMENT => Change color of navbar links to look like the logo CELL color
+
 Create contact page {cm:2022-11-19}
 
 Create about us page

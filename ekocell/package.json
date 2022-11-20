@@ -15,8 +15,8 @@
     "@astrojs/mdx": "^0.11.4",
     "@astrojs/react": "^1.1.4",
     "@astrojs/tailwind": "^2.0.2",
-    "@types/slate": "^0.47.11",
     "@types/escape-html": "^1.0.2",
+    "@types/slate": "^0.47.11",
     "astro": "^1.4.4",
     "classnames": "^2.3.2",
     "emailjs-com": "^3.2.0",
@@ -29,6 +29,7 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
     "@types/escape-html": "^1.0.2",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",

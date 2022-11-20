@@ -27,7 +27,7 @@ export async function getCategories() {
               ime
               kratkiopis
               opis
-              specifikacijeiprednost {
+              specifikacije_i_prednost {
                 specifikacija
                 prednosti
               }

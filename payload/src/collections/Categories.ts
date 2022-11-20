@@ -42,7 +42,7 @@ const Categories: CollectionConfig = {
           type: "textarea"
         },
         {
-          name: 'specifikacijeiprednost',
+          name: 'specifikacije_i_prednost',
           label: 'Specifikacije i prednosti',
           type: 'array',
           fields: [

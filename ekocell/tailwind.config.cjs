@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,scss}'],
@@ -15,5 +16,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require
+  plugins: [require('@tailwindcss/typography')],
 };

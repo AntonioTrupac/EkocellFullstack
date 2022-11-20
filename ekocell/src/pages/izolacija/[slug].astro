@@ -2,20 +2,10 @@
 import RichText from "@components/RichText.astro";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
-
-type SpecifikacijeIPredonsti = {
-  specifikacija?:
-    | {
-        [k: string]: unknown;
-      }[]
-    | undefined;
-  prednosti?:
-    | {
-        [k: string]: unknown;
-      }[]
-    | undefined;
-  id?: string | undefined;
-};
+import type {
+  FormattedElement,
+  FormattedText,
+} from "../../../../payload/src/rich-text-export";
 
 export async function getStaticPaths() {
   const data = await getCategories();
@@ -26,7 +16,7 @@ export async function getStaticPaths() {
       props: {
         opis: c.opis,
         ime: c.ime,
-        specifikacijePrednost: c.specifikacijeiprednost,
+        specifikacijePrednost: c.specifikacije_i_prednost,
       },
     };
   });
@@ -35,17 +25,19 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { opis, ime, specifikacijePrednost } = Astro.props;
 
-console.log(specifikacijePrednost);
+const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
 ---
 
-<Layout title="Ekocell | Egger Izolacija"
-  >{slug} : {ime}
+<Layout title="Ekocell | Egger Izolacija">
+  <section class="xl:max-w-7xl m-auto mt-10">
+    <h1>{slug}</h1> : {ime}
 
-  {opis}
+    {opis}
 
-  {
-    specifikacijePrednost.map((s: any) => {
-      return <RichText richText={s.specifikacija} />;
-    })
-  }
+    {
+      content.map(
+        (s: any) => s.specifikacija && <RichText richText={s.specifikacija} />
+      )
+    }
+  </section>
 </Layout>

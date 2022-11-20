@@ -29,7 +29,7 @@ export interface Kategorija {
     ime?: string;
     kratkiopis?: string;
     opis?: string;
-    specifikacijeiprednost: {
+    specifikacije_i_prednost: {
       specifikacija?: {
         [k: string]: unknown;
       }[];
