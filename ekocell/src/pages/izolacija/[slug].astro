@@ -29,7 +29,7 @@ const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
 ---
 
 <Layout title="Ekocell | Egger Izolacija">
-  <section class="xl:max-w-7xl m-auto mt-10 px-5 md:px-10">
+  <section class="xl:max-w-7xl m-auto mt-10 px-5 md:px-10 xl:px-0 pb-10">
     <div>
       <h1
         class="lg:text-6xl text-5xl leading-snug lg:leading-normal mb-2 text-slate-800"
@@ -39,22 +39,42 @@ const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
 
       <p class="text-slate-600">{opis}</p>
     </div>
-    {
-      categoryImages.map(
-        (ci: any) =>
-          ci.mainImage && (
-            <img
-              src={ci.mainImage.url}
-              alt={ci.mainImage.alt}
-              class="w-full mt-10"
-            />
+
+    <div class="grid lg:grid-cols-2 lg:max-w-7xl grid-cols-1 gap-10 mt-10">
+      <div>
+        {
+          content.map(
+            (s: any) =>
+              s.specifikacija && <RichText richText={s.specifikacija} />
           )
-      )
-    }
-    <div>
+        }
+      </div>
+
       {
-        content.map(
-          (s: any) => s.specifikacija && <RichText richText={s.specifikacija} />
+        categoryImages.map(
+          (ci: any) =>
+            ci.mainImage && (
+              <div class="flex flex-col justify-center">
+                <img
+                  src={ci.mainImage.url}
+                  alt={ci.mainImage.alt}
+                  class="w-full"
+                />
+                <div class="grid grid-cols-2 gap-10">
+                  <img
+                    src={ci.gridImageOne.url}
+                    alt={ci.gridImageOne.alt}
+                    class="w-full mt-10"
+                  />
+
+                  <img
+                    src={ci.gridImageTwo.url}
+                    alt={ci.gridImageTwo.alt}
+                    class="w-full mt-10"
+                  />
+                </div>
+              </div>
+            )
         )
       }
     </div>
