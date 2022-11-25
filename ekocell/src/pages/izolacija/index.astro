@@ -19,20 +19,24 @@ const categories = await getCategories();
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:m-10 mx-5 my-10">
       {
-        categories.category.map((c, index) => {
-          return (
-            <ul class="h-full">
-              <Card
-                title={c.ime}
-                shortDescription={c.kratkiopis}
-                href={`izolacija/${c.slug}`}
-                categoryImage={
-                  c.categoryImages[index]?.mainImage as Media | undefined // disgusting
-                }
-              />
-            </ul>
-          );
-        })
+        categories ? (
+          categories.category.map((c, index) => {
+            return (
+              <ul class="h-full">
+                <Card
+                  title={c.ime}
+                  shortDescription={c.kratkiopis}
+                  href={`izolacija/${c.slug}`}
+                  categoryImage={
+                    c.categoryImages[index]?.mainImage as Media | undefined // disgusting
+                  }
+                />
+              </ul>
+            );
+          })
+        ) : (
+          <div>Loading</div>
+        )
       }
     </div>
   </section>

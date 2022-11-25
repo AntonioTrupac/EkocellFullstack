@@ -18,11 +18,13 @@ const url = categoryImage?.url;
   class:list={[classes["link-card"], "h-full flex flex-col rounded-lg border"]}
 >
   <div class="p-3">
-    <img
-      class="aspect-video rounded"
-      src={`${url ? url : "/placeholder.jpg"}`}
-      alt=""
-    />
+    {
+      url ? (
+        <img class="w-full min-h-fit rounded" src={`${url}`} alt="" />
+      ) : (
+        <img class="w-full rounded" src={"/placeholder.jpg"} alt="" />
+      )
+    }
   </div>
 
   <div class="p-3">
