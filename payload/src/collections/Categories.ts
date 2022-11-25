@@ -19,6 +19,10 @@ const Categories: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'description',
+      type: 'text',
+    },
+    {
       name: 'category',
       label: "Kategorije",
       type: 'array',

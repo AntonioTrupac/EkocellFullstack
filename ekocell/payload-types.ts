@@ -24,6 +24,7 @@ export interface Onama {
 export interface Kategorija {
   id: string;
   title?: string;
+  description?: string;
   category: {
     slug: string;
     ime?: string;

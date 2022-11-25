@@ -1,20 +1,28 @@
 ---
+import type { Media } from "payload-types";
 import classes from "./Card.module.scss";
 
 export interface Props {
   title?: string;
   shortDescription?: string;
   href: string;
+  categoryImage: Media | undefined;
 }
 
-const { href, title, shortDescription } = Astro.props;
+const { href, title, shortDescription, categoryImage } = Astro.props;
+const url = categoryImage?.url;
+// console.log(url);
 ---
 
 <li
   class:list={[classes["link-card"], "h-full flex flex-col rounded-lg border"]}
 >
   <div class="p-3">
-    <img class="aspect-video rounded" src="/placeholder.jpg" alt="" />
+    <img
+      class="aspect-video rounded"
+      src={`${url ? url : "/placeholder.jpg"}`}
+      alt=""
+    />
   </div>
 
   <div class="p-3">

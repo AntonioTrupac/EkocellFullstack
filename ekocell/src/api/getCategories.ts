@@ -22,6 +22,7 @@ export async function getCategories() {
           docs {
             id
             title
+            description
             category {
               slug
               ime

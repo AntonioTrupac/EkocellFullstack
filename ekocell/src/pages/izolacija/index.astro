@@ -2,6 +2,7 @@
 // import Card from "@components/Card.astro";
 import Card from "@components/Card/Card.astro";
 import Heading1 from "@components/Heading/Heading1.astro";
+import type { Media } from "payload-types";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
 
@@ -9,20 +10,29 @@ const categories = await getCategories();
 ---
 
 <Layout title="Ekocell | Izolacija">
-  <section class="lg:max-w-7xl m-auto h-screen">
-    <Heading1 className="mt-10">{categories.title}</Heading1>
+  <section class="lg:max-w-7xl m-auto pb-5">
+    <div class="px-10">
+      <Heading1 className="mt-10 mb-4">{categories.title}</Heading1>
+
+      <p class="text-center">{categories.description}</p>
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:m-10 mx-5 my-10">
       {
-        categories.category.map((c) => (
-          <ul class="h-full">
-            <Card
-              title={c.ime}
-              shortDescription={c.kratkiopis}
-              href={`izolacija/${c.slug}`}
-            />
-          </ul>
-        ))
+        categories.category.map((c, index) => {
+          return (
+            <ul class="h-full">
+              <Card
+                title={c.ime}
+                shortDescription={c.kratkiopis}
+                href={`izolacija/${c.slug}`}
+                categoryImage={
+                  c.categoryImages[index]?.mainImage as Media | undefined // disgusting
+                }
+              />
+            </ul>
+          );
+        })
       }
     </div>
   </section>
