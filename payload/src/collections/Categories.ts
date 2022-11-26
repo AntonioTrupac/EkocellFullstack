@@ -46,44 +46,22 @@ const Categories: CollectionConfig = {
           type: "textarea"
         },
         {
-          name: "categoryImages",
-          label: "Slike kategorija",
-          type: "array",
-          fields: [
-            {
-              name: 'mainImage',
-              type: 'upload',
-              relationTo: 'media',
-              required: true,
-            },
-            {
-              name: 'gridImageOne',
-              type: 'upload',
-              relationTo: 'media',
-              required: true,
-            },
-            {
-              name: 'gridImageTwo',
-              type: 'upload',
-              relationTo: 'media',
-              required: true,
-            },
-          ]
+          type: "relationship",
+          name: "characteristics",
+          relationTo: "characteristic",
+          label: "Karakteristike",
         },
         {
-          name: 'specifikacije_i_prednost',
-          label: 'Specifikacije i prednosti',
-          type: 'array',
-          fields: [
-            {
-              name: 'specifikacija',
-              type: 'richText'
-            },
-            {
-              name: 'prednosti',
-              type: 'richText'
-            }
-          ]
+          type: "relationship",
+          name: "specifications",
+          relationTo: "specification",
+          label: "Specifikacije",
+        }, 
+        {
+          type: "relationship",
+          name: "usages",
+          relationTo: "usage",
+          label: "Uporaba",
         }
       ]
     },

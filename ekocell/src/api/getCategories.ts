@@ -28,24 +28,47 @@ export async function getCategories() {
               ime
               kratkiopis
               opis
-              categoryImages {
-                mainImage {
-                  id
-                  alt
-                  url
-                }
-                gridImageOne {
-                  id
-                  url
-                }
-                gridImageTwo {
-                  id
-                  url
+              characteristics {
+                description
+                images {
+                  mainImage {
+                    url
+                  }
+                  gridImageOne {
+                    url
+                  }
+                  gridImageTwo {
+                    url
+                  }
                 }
               }
-              specifikacije_i_prednost {
-                specifikacija
-                prednosti
+              specifications {
+                description
+                images {
+                  mainImage {
+                    url
+                  }
+                  gridImageOne {
+                    url
+                  }
+                  gridImageTwo {
+                    url
+                  }
+                }
+              }
+              usages {
+                description
+                images {
+                  mainImage {
+                    url
+                  }
+                  gridImageOne {
+                    url
+                  }
+                  gridImageTwo {
+                    url
+                  }
+                }
               }
             }
           }

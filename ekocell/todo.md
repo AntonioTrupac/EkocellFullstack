@@ -13,3 +13,5 @@ Create about us page
 Type: BUG => animation for card title link is not working
 
 Type: FIX => while image is being fetched category cards flicker, set a placeholder(blur) or min-h on the image container
+
+Type: COMPONENT => create a reusable component for **specifikacije i prednosti** basically every object should have an array of pictures with appropriate text(**MARKDOWN**) with it

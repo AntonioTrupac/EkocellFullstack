@@ -4,6 +4,9 @@ import Users from './collections/Users';
 import Onama from './globals/Onama';
 import Categories from './collections/Categories';
 import Media from './collections/Media';
+import Charactheristics from './collections/Characteristic';
+import Sepcifications from './collections/Specifications';
+import Usages from './collections/Usage';
 
 export default buildConfig({
   serverURL: 'http://localhost:3100',
@@ -17,7 +20,10 @@ export default buildConfig({
   collections: [
     Categories,
     Users,
-    Media
+    Media,
+    Charactheristics,
+    Sepcifications,
+    Usages
   ],
   globals:[
     Onama
