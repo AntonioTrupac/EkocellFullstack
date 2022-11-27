@@ -6,17 +6,16 @@ import type {
 import RichText from "./RichText.astro";
 
 type Props = {
-  markdown: any;
+  markdown: (FormattedElement | FormattedText)[];
 };
 
 const { markdown } = Astro.props;
-const richText = markdown as (FormattedElement | FormattedText)[];
 ---
 
 <section>
   <div>
     <h1>My Title</h1>
     <p>My paragraph</p>
-    <RichText richText={richText} />
+    <RichText richText={markdown} />
   </div>
 </section>

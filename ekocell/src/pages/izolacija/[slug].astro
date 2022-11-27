@@ -1,12 +1,7 @@
 ---
-import RichText from "@components/RichText.astro";
 import TextWithMedia from "@components/TextWithMedia.astro";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
-import type {
-  FormattedElement,
-  FormattedText,
-} from "../../../../payload/src/rich-text-export";
 
 export async function getStaticPaths() {
   const data = await getCategories();
@@ -26,7 +21,7 @@ export async function getStaticPaths() {
 const { name, description, characteristics } = Astro.props;
 
 const markdown = characteristics.description;
-console.log(markdown);
+
 // const { opis, ime, specifikacijePrednost, categoryImages } = Astro.props;
 
 // const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
