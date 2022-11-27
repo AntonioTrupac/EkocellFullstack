@@ -30,21 +30,28 @@ export interface Kategorija {
     ime?: string;
     kratkiopis?: string;
     opis?: string;
-    categoryImages: {
-      mainImage: string | Media;
-      gridImageOne: string | Media;
-      gridImageTwo: string | Media;
-      id?: string;
-    }[];
-    specifikacije_i_prednost: {
-      specifikacija?: {
-        [k: string]: unknown;
-      }[];
-      prednosti?: {
-        [k: string]: unknown;
-      }[];
-      id?: string;
-    }[];
+    characteristics?: string | Karateristika;
+    specifications?: string | Specifikacija;
+    usages?: string | Uporaba;
+    id?: string;
+  }[];
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "characteristic".
+ */
+export interface Karateristika {
+  id: string;
+  title?: string;
+  description?: {
+    [k: string]: unknown;
+  }[];
+  images: {
+    mainImage: string | Media;
+    gridImageOne: string | Media;
+    gridImageTwo: string | Media;
     id?: string;
   }[];
   createdAt: string;
@@ -63,6 +70,44 @@ export interface Media {
   filesize?: number;
   width?: number;
   height?: number;
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "specification".
+ */
+export interface Specifikacija {
+  id: string;
+  title?: string;
+  description?: {
+    [k: string]: unknown;
+  }[];
+  images: {
+    mainImage: string | Media;
+    gridImageOne?: string | Media;
+    gridImageTwo?: string | Media;
+    id?: string;
+  }[];
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "usage".
+ */
+export interface Uporaba {
+  id: string;
+  title?: string;
+  description?: {
+    [k: string]: unknown;
+  }[];
+  images: {
+    mainImage: string | Media;
+    gridImageOne?: string | Media;
+    gridImageTwo?: string | Media;
+    id?: string;
+  }[];
   createdAt: string;
   updatedAt: string;
 }

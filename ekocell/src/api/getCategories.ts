@@ -1,10 +1,44 @@
-import type { Kategorija } from "payload-types";
+import type { Media } from "payload-types";
+
+type GenericSubCategory = {
+  id: string;
+  title?: string;
+  description?: {
+    [k: string]: unknown;
+  }[];
+  images: {
+    mainImage: Media;
+    gridImageOne: Media;
+    gridImageTwo: Media;
+    id?: string;
+  }[];
+  createdAt: string;
+  updatedAt: string;
+};
+
+type Category = {
+  id: string;
+  title?: string;
+  description?: string;
+  category: {
+    slug: string;
+    ime?: string;
+    kratkiopis?: string;
+    opis?: string;
+    characteristics?: GenericSubCategory;
+    specifications?: GenericSubCategory;
+    usages?: GenericSubCategory;
+    id?: string;
+  }[];
+  createdAt: string;
+  updatedAt: string;
+};
 
 type JSONResponse = {
   errors?: Array<{ message: string }>;
   data?: {
     kategorije: {
-      docs: Kategorija[];
+      docs: Category[];
     };
   };
 };

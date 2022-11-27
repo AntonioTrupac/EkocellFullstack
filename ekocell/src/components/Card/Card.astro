@@ -1,16 +1,18 @@
 ---
-import type { Media } from "payload-types";
+// import type { Media } from "payload-types";
 import classes from "./Card.module.scss";
 
 export interface Props {
   title?: string;
   shortDescription?: string;
   href: string;
-  categoryImage: Media | undefined;
+  image: any;
 }
 
-const { href, title, shortDescription, categoryImage } = Astro.props;
-const url = categoryImage?.url;
+const { href, title, shortDescription, image } = Astro.props;
+const url = image.url;
+console.log(url);
+
 // console.log(url);
 ---
 

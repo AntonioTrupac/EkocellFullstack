@@ -2,7 +2,7 @@
 // import Card from "@components/Card.astro";
 import Card from "@components/Card/Card.astro";
 import Heading1 from "@components/Heading/Heading1.astro";
-import type { Media } from "payload-types";
+// import type { Media } from "payload-types";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
 
@@ -27,9 +27,7 @@ const categories = await getCategories();
                   title={c.ime}
                   shortDescription={c.kratkiopis}
                   href={`izolacija/${c.slug}`}
-                  categoryImage={
-                    c.categoryImages[index]?.mainImage as Media | undefined // disgusting
-                  }
+                  image={`${c?.characteristics?.images[index]?.mainImage}`}
                 />
               </ul>
             );

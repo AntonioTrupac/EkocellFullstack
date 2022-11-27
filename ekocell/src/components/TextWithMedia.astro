@@ -1,0 +1,22 @@
+---
+import type {
+  FormattedElement,
+  FormattedText,
+} from "../../../payload/src/rich-text-export";
+import RichText from "./RichText.astro";
+
+type Props = {
+  markdown: any;
+};
+
+const { markdown } = Astro.props;
+const richText = markdown as (FormattedElement | FormattedText)[];
+---
+
+<section>
+  <div>
+    <h1>My Title</h1>
+    <p>My paragraph</p>
+    <RichText richText={richText} />
+  </div>
+</section>
