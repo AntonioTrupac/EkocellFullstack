@@ -1,6 +1,6 @@
 import type { Media } from "payload-types";
 
-type GenericSubCategory = {
+export interface GenericSubCategory {
   id: string;
   title?: string;
   description?: {
@@ -14,7 +14,7 @@ type GenericSubCategory = {
   }[];
   createdAt: string;
   updatedAt: string;
-};
+}
 
 type Category = {
   id: string;

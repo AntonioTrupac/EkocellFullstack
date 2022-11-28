@@ -1,6 +1,7 @@
 ---
 import TextWithMedia from "@components/TextWithMedia.astro";
-import { GenericSubCategory, getCategories } from "src/api/getCategories";
+import { getCategories } from "src/api/getCategories";
+import type { GenericSubCategory } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
 import type {
   FormattedElement,
@@ -17,6 +18,8 @@ export async function getStaticPaths() {
         description: c.opis,
         name: c.ime,
         characteristics: c.characteristics,
+        specifications: c.specifications,
+        usages: c.usages,
       },
     };
   });
@@ -26,15 +29,30 @@ interface Props {
   description: string;
   name: string;
   characteristics: GenericSubCategory;
+  specifications: GenericSubCategory;
+  usages: GenericSubCategory;
 }
 
-const { name, description, characteristics } = Astro.props;
+const { name, description, characteristics, specifications, usages } =
+  Astro.props;
 
 const characteristicsMarkdown = characteristics.description as (
   | FormattedElement
   | FormattedText
 )[];
 const characteristicsMedia = characteristics.images;
+
+const specificationsMarkdown = specifications.description as (
+  | FormattedElement
+  | FormattedText
+)[];
+const specificationsMedia = specifications.images;
+
+const usagesMarkdown = usages.description as (
+  | FormattedElement
+  | FormattedText
+)[];
+const usagesMedia = usages.images;
 ---
 
 <Layout title="Ekocell | Egger Izolacija">
@@ -51,5 +69,12 @@ const characteristicsMedia = characteristics.images;
       markdown={characteristicsMarkdown}
       media={characteristicsMedia}
     />
+
+    <TextWithMedia
+      markdown={specificationsMarkdown}
+      media={specificationsMedia}
+    />
+
+    <TextWithMedia markdown={usagesMarkdown} media={usagesMedia} />
   </section>
 </Layout>
