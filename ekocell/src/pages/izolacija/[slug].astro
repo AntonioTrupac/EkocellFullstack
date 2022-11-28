@@ -1,7 +1,11 @@
 ---
 import TextWithMedia from "@components/TextWithMedia.astro";
-import { getCategories } from "src/api/getCategories";
+import { GenericSubCategory, getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
+import type {
+  FormattedElement,
+  FormattedText,
+} from "../../../../payload/src/rich-text-export";
 
 export async function getStaticPaths() {
   const data = await getCategories();
@@ -18,33 +22,34 @@ export async function getStaticPaths() {
   });
 }
 
+interface Props {
+  description: string;
+  name: string;
+  characteristics: GenericSubCategory;
+}
+
 const { name, description, characteristics } = Astro.props;
 
-const markdown = characteristics.description;
-
-// const { opis, ime, specifikacijePrednost, categoryImages } = Astro.props;
-
-// const content = specifikacijePrednost as (FormattedElement | FormattedText)[];
+const characteristicsMarkdown = characteristics.description as (
+  | FormattedElement
+  | FormattedText
+)[];
+const characteristicsMedia = characteristics.images;
 ---
 
 <Layout title="Ekocell | Egger Izolacija">
-  <section class="xl:max-w-7xl m-auto mt-10 px-5 md:px-10 xl:px-0 pb-10">
-    <div>
-      <h1
-        class="lg:text-6xl text-5xl leading-snug lg:leading-normal mb-2 text-slate-800"
-      >
-        {name}
-      </h1>
+  <section class="xl:max-w-7xl m-auto mt-10 px-5 md:px-10 pb-10">
+    <h1
+      class="lg:text-6xl text-5xl leading-snug lg:leading-normal mb-2 text-slate-800"
+    >
+      {name}
+    </h1>
 
-      <p class="text-slate-600">{description}</p>
-    </div>
+    <p class="text-slate-600">{description}</p>
 
-    <!-- <div class="grid lg:grid-cols-2 lg:max-w-7xl grid-cols-1 gap-10 mt-10">
-      <div class="lg:order-1 order-2">
-      
-      </div>
-    </div> -->
-
-    <TextWithMedia markdown={markdown} />
+    <TextWithMedia
+      markdown={characteristicsMarkdown}
+      media={characteristicsMedia}
+    />
   </section>
 </Layout>

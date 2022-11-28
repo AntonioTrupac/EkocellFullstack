@@ -7,15 +7,45 @@ import RichText from "./RichText.astro";
 
 type Props = {
   markdown: (FormattedElement | FormattedText)[];
+  media: any;
 };
 
-const { markdown } = Astro.props;
+type MediaItem = {
+  mainImage: {
+    url: string;
+  };
+  gridImageOne: {
+    url: string;
+  };
+  gridImageTwo: {
+    url: string;
+  };
+};
+
+const { markdown, media } = Astro.props;
 ---
 
-<section>
-  <div>
-    <h1>My Title</h1>
-    <p>My paragraph</p>
+<section class="mt-10 grid xl:grid-cols-2 grid-cols-1 gap-10">
+  <div class="flex flex-col flex-grow-1 xl:order-1 order-2 justify-center">
     <RichText richText={markdown} />
+  </div>
+
+  <div class="xl:order-2 order-1">
+    {
+      media.map((item: MediaItem) => (
+        <div class="flex flex-col">
+          {item.mainImage.url && <img src={item.mainImage.url} />}
+
+          <div class="xl:flex hidden gap-5 mt-5">
+            <div>
+              {item.gridImageOne.url && <img src={item.gridImageOne.url} />}
+            </div>
+            <div>
+              {item.gridImageTwo.url && <img src={item.gridImageTwo.url} />}
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>
