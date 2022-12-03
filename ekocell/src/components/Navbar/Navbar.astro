@@ -16,7 +16,10 @@ import MobileNavbar from "@components/Navbar/MobileNavbar";
     <div class="lg:flex align-center h-full hidden">
       <a href="/" class={styles.link}>Naslovna</a>
       <a href="/onama" class={styles.link}>O nama</a>
-      <a href="/izolacija" class={styles.link}>Izolacija</a>
+      <button class:list={[styles.link, styles["dropdown-button"]]}
+        >Izolacija</button
+      >
+      <div class={styles.hide}>HELLLOOOOOOOOOOOOOOOOOOOOOOOO</div>
       <a href="/kontakt" class={styles.link}>Kontakt</a>
     </div>
   </nav>

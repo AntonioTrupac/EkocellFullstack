@@ -1,8 +1,6 @@
 ---
-// import Card from "@components/Card.astro";
 import Card from "@components/Card/Card.astro";
 import Heading1 from "@components/Heading/Heading1.astro";
-// import type { Media } from "payload-types";
 import { getCategories } from "src/api/getCategories";
 import Layout from "src/layouts/Layout.astro";
 
@@ -19,22 +17,18 @@ const categories = await getCategories();
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:m-10 mx-5 my-10">
       {
-        categories ? (
-          categories.category.map((c, index) => {
-            return (
-              <ul class="h-full">
-                <Card
-                  title={c.ime}
-                  shortDescription={c.kratkiopis}
-                  href={`izolacija/${c.slug}`}
-                  image={`${c?.characteristics?.images[index]?.mainImage}`}
-                />
-              </ul>
-            );
-          })
-        ) : (
-          <div>Loading</div>
-        )
+        categories.category.map((c, index) => {
+          return (
+            <ul class="h-full">
+              <Card
+                title={c.ime}
+                shortDescription={c.kratkiopis}
+                href={`izolacija/${c.slug}`}
+                image={`${c?.characteristics?.images[index]?.mainImage}`}
+              />
+            </ul>
+          );
+        })
       }
     </div>
   </section>
