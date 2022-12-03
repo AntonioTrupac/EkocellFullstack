@@ -4,6 +4,7 @@ import type {
   FormattedText,
 } from "../../../payload/src/rich-text-export";
 import RichText from "./RichText.astro";
+import { Picture } from "@astrojs/image/components";
 
 type Props = {
   markdown: (FormattedElement | FormattedText)[];
@@ -26,39 +27,52 @@ type MediaItem = {
 const { markdown, media, className } = Astro.props;
 ---
 
-<section
-  class:list={[
-    "grid xl:grid-cols-2 grid-cols-1 gap-10 items-center mt-10",
-    className,
-  ]}
->
-  <div class="flex flex-col flex-grow-1 xl:order-1 order-2 justify-center">
-    <RichText richText={markdown} />
-  </div>
+<div class="flex justify-center items-center">
+  <section
+    class:list={[
+      "grid xl:grid-cols-2 grid-cols-1 gap-10 items-center mt-10 mb-10",
+      className,
+    ]}
+  >
+    <div class="flex flex-col xl:order-1 order-2 justify-center">
+      <RichText richText={markdown} />
+    </div>
 
-  <div class="xl:order-2 order-1">
-    {
-      media.map((item: MediaItem) => (
-        <>
-          {item.mainImage.url && <img src={item.mainImage.url} />}
+    <div class="xl:order-2 order-1">
+      {
+        media.map((item: MediaItem) => (
+          <>
+            {item.mainImage.url && (
+              <Picture
+                src={item.mainImage.url}
+                alt=""
+                widths={[400, 800, 620]}
+                aspectRatio="16:10"
+                sizes="(min-width: 1280px) 50vw, 100vw"
+                background="transparent"
+                loading="eager"
+                fit="fill"
+              />
+            )}
 
-          {item.gridImageOne?.url && item.gridImageTwo?.url && (
-            <div class="xl:flex hidden gap-5 mt-5">
-              {item.gridImageOne?.url && (
-                <div>
-                  <img src={item.gridImageOne.url} />
-                </div>
-              )}
+            {item.gridImageOne?.url && item.gridImageTwo?.url && (
+              <div class="xl:flex hidden gap-5 mt-5">
+                {item.gridImageOne?.url && (
+                  <div>
+                    <img src={item.gridImageOne.url} height={202} width={300} />
+                  </div>
+                )}
 
-              {item.gridImageTwo?.url && (
-                <div>
-                  <img src={item.gridImageTwo.url} />
-                </div>
-              )}
-            </div>
-          )}
-        </>
-      ))
-    }
-  </div>
-</section>
+                {item.gridImageTwo?.url && (
+                  <div>
+                    <img src={item.gridImageTwo.url} height={202} width={300} />
+                  </div>
+                )}
+              </div>
+            )}
+          </>
+        ))
+      }
+    </div>
+  </section>
+</div>
