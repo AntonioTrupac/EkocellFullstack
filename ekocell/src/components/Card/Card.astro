@@ -11,9 +11,6 @@ export interface Props {
 
 const { href, title, shortDescription, image } = Astro.props;
 const url = image.url;
-console.log(url);
-
-// console.log(url);
 ---
 
 <li
@@ -22,7 +19,7 @@ console.log(url);
   <div class="p-3">
     {
       url ? (
-        <img class="w-full min-h-fit rounded" src={`${url}`} alt="" />
+        <img class="w-full min-h-fit rounded" src={url} alt="" />
       ) : (
         <img class="w-full rounded" src={"/placeholder.jpg"} alt="" />
       )

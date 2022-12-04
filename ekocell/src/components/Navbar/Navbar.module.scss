@@ -98,17 +98,22 @@ header {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
+  position: fixed;
+  background-color: $secondary;
+  width: 100%;
+  left: 0;
+  padding-bottom: 40px;
 }
 
-.dropdown-button {
-  &:hover + .hide {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 80px;
-    background-color: $secondary;
+.dropdown {
+  position: relative;
+  list-style-type: none;
+  display: inline-block;
+
+  &:hover > .hide {
+    visibility: visible;
     width: 100%;
-    padding-bottom: 40px;
+    background-color: $secondary;
   }
 }

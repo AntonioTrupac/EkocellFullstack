@@ -1,0 +1,50 @@
+@import '../../scss/_variables.scss';
+
+.card {
+  position: relative;
+  list-style: none;
+  display: flex;
+  position: relative;
+  list-style: none;
+  display: flex;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $tertiary;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  .link {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: $body;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 100ms;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

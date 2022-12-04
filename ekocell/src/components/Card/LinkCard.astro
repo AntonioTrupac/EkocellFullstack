@@ -1,0 +1,24 @@
+---
+import classes from "./LinkCard.module.scss";
+
+interface Props {
+  href: string;
+  description: string;
+  name: string;
+}
+
+const { description, href, name } = Astro.props;
+---
+
+<section class:list={[classes.card, "h-full flex flex-col rounded-lg"]}>
+  <div class="p-3">
+    <h2 class="font-medium text-lg mb-2">
+      <a class={classes.link} href={href}>
+        {name}
+        &rarr;
+      </a>
+    </h2>
+
+    <p class="text-background">{description}</p>
+  </div>
+</section>
