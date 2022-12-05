@@ -40,7 +40,7 @@ header {
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: 0.04em;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 100ms cubic-bezier(0.4, 0, 0.2, 1);
     border: 4px solid transparent;
 
     &:active {
@@ -66,7 +66,7 @@ header {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  transition: opacity 1ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
   z-index: 999;
 
   & .mobile-menu {
@@ -78,7 +78,7 @@ header {
     width: 100%;
     height: 0%;
     background-color: $secondary;
-    transition: opacity 1ms ease-in-out;
+    transition: opacity 100ms ease-in-out;
   }
 
   .open {
@@ -97,23 +97,38 @@ header {
   }
 }
 
-.hide {
-  visibility: hidden;
-  position: fixed;
-  background-color: $secondary;
-  width: 100%;
-  left: 0;
-  padding-bottom: 40px;
-}
-
 .dropdown {
   position: relative;
   list-style-type: none;
   display: inline-block;
 
+  ul {
+    transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  li {
+    opacity: 0;
+    transition: 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hide {
+    visibility: hidden;
+    position: fixed;
+    background-color: $secondary;
+    width: 100%;
+    left: 0;
+    padding-bottom: 40px;
+    opacity: 0;
+  }
+
   &:hover > .hide {
     visibility: visible;
     width: 100%;
     background-color: $secondary;
+    opacity: 1;
+
+    li {
+      opacity: 1;
+    }
   }
 }
