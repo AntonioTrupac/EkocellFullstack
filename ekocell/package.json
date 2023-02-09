@@ -12,29 +12,29 @@
     "lint": "eslint --ext .tsx,.ts,.js,.astro src"
   },
   "dependencies": {
-    "@astrojs/image": "^0.12.0",
-    "@astrojs/mdx": "^0.11.4",
-    "@astrojs/react": "^1.1.4",
-    "@astrojs/tailwind": "^2.0.2",
+    "@astrojs/image": "^0.14.1",
+    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/tailwind": "^3.0.1",
     "@types/escape-html": "^1.0.2",
     "@types/slate": "^0.47.11",
-    "astro": "^1.4.4",
+    "astro": "^2.0.9",
     "classnames": "^2.3.2",
     "emailjs-com": "^3.2.0",
     "escape-html": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.38.0",
-    "sass": "^1.55.0",
+    "react-hook-form": "^7.43.1",
+    "sass": "^1.58.0",
     "sharp": ">=0.31.0",
     "slate": "^0.86.0",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.2.6"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
     "@types/escape-html": "^1.0.2",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "@types/tailwindcss": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.39.0",
@@ -52,7 +52,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-tailwindcss": "^3.5.2",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.5.5"
   }
 }
