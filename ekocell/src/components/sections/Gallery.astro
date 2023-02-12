@@ -1,0 +1,54 @@
+---
+import { Picture } from "@astrojs/image/components";
+---
+
+<section
+  class="pt-10 px-4 pb-10 md:px-10 md:py-20 lg:max-w-7xl md:mx-auto lg:px-0"
+>
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold">Galerija</h2>
+    <p class="text-lg font-bold">Pogledajte naše radove</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+    <Picture
+      src="/house-isolated-field.png"
+      alt=""
+      aspectRatio="4:3"
+      widths={[400, 800, 620]}
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+      fit="cover"
+    />
+
+    <Picture
+      src="/house-isolated-field.png"
+      alt=""
+      aspectRatio="4:3"
+      widths={[400, 800, 620]}
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+      fit="cover"
+    />
+
+    <Picture
+      src="/house-isolated-field.png"
+      alt=""
+      aspectRatio="4:3"
+      widths={[400, 800, 620]}
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+      fit="cover"
+    />
+
+    <Picture
+      src="/house-isolated-field.png"
+      alt=""
+      aspectRatio="4:3"
+      widths={[400, 800, 620]}
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+      fit="cover"
+    />
+  </div>
+</section>

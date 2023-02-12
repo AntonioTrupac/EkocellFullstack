@@ -6,6 +6,7 @@ header {
   height: 72px;
   width: 100%;
   box-shadow: $box-shadow;
+  background: $gradient;
 
   nav {
     display: none;
@@ -34,7 +35,7 @@ header {
     align-items: center;
     height: 100%;
     padding: 0 12px;
-    color: $white-color;
+    color: #000;
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
@@ -44,10 +45,12 @@ header {
     border: 4px solid transparent;
 
     &:active {
-      color: $primary-color;
+      color: $tertiary;
     }
 
     @media screen and (min-width: 1024px) {
+      color: $white-color;
+
       &:hover,
       &:active,
       &:focus {
@@ -69,15 +72,14 @@ header {
   transition: opacity 100ms ease-in-out;
   z-index: 999;
 
-  & .mobile-menu {
+  .mobile-menu {
     display: none;
     opacity: 0;
     position: absolute;
     top: 72px;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: $secondary;
+    right: 0;
+    width: 75%;
+    background: $mobile-background;
     transition: opacity 100ms ease-in-out;
   }
 
@@ -114,7 +116,7 @@ header {
   .hide {
     visibility: hidden;
     position: fixed;
-    background-color: $secondary;
+    background: $gradient;
     width: 100%;
     left: 0;
     padding-bottom: 40px;

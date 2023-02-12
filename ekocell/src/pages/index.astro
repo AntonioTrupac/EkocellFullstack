@@ -1,15 +1,16 @@
 ---
+import Hero from "@components/sections/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import Designer from "@components/sections/Designer.astro";
+import Gallery from "@components/sections/Gallery.astro";
+import Partners from "@components/Partners.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>Index page</main>
+  <main>
+    <Hero />
+    <Designer />
+    <Gallery />
+    <Partners />
+  </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-</style>

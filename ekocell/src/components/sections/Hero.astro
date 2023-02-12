@@ -1,0 +1,45 @@
+---
+import { Picture } from "@astrojs/image/components";
+import { LinkButton } from "@components/Button";
+---
+
+<section
+  class="grid lg:grid-cols-2 gap-5 lg:gap-12 px-4 pt-8 pb-10 md:px-8 md:py-20 lg:px-10 lg:max-w-7xl lg:mx-auto"
+>
+  <div class="order-1 lg:order-2">
+    <Picture
+      src="/house-isolated-field.png"
+      alt=""
+      widths={[400, 800, 620]}
+      aspectRatio="4:3"
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+      fit="fill"
+    />
+  </div>
+
+  <div class="lg:order-1 order-2 text-center md:text-left">
+    <h1 class="text-3xl lg:text-5xl leading-8 font-bold">
+      Gradimo budućnost <span class="text-tertiary">zajedno</span>!
+    </h1>
+    <p class="mt-5 font-medium">
+      Uz našu pomoć, možete graditi kuću koja će vam pružiti maksimalnu
+      udobnost, a istovremeno biti ekološki prihvatljiva. Naša misija je da
+      pružimo kvalitetne usluge i da vam pomognemo da ostvarite svoje
+      arhitektonske snove.
+    </p>
+
+    <div class="mt-8 flex gap-4">
+      <LinkButton
+        client:load
+        href="/kontakt"
+        className="w-1/2 text-center lg:w-auto">Kontaktirajte nas</LinkButton
+      >
+      <LinkButton
+        client:load
+        href="/onama"
+        className="w-1/2 text-center lg:w-auto">Više o nama</LinkButton
+      >
+    </div>
+  </div>
+</section>

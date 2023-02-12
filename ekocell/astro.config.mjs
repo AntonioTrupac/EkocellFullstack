@@ -3,15 +3,25 @@ import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
-import image from "@astrojs/image";
+import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      theme: 'dracula'
+      theme: 'dracula',
     },
-    syntaxHighlight: 'prism'
+    syntaxHighlight: 'prism',
   },
-  integrations: [tailwind(), react(), mdx(), image()]
+  integrations: [
+    tailwind(),
+    react(),
+    mdx(),
+    image(),
+    mdx({
+      extendMarkdownConfig: false,
+      smartypants: true,
+      gfm: true,
+    }),
+  ],
 });

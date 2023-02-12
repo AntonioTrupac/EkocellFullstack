@@ -1,0 +1,81 @@
+---
+import { Picture } from "@astrojs/image/components";
+---
+
+<section class="bg-[#D9D9D9]">
+  <div
+    class="pt-10 lg:max-w-7xl px-4 pb-10 lg:m-auto md:px-8 md:py-20 md:grid md:grid-cols-8 md:grid-rows-1 md:gap-x-10 md:gap-y-16 md:auto-rows-min"
+  >
+    <div class="col-start-3 col-span-4 text-center">
+      <h2 class="font-bold text-3xl">Dizajn interijera</h2>
+      <h3 class="font-bold text-lg mt-3 capitalize">
+        Dizajnirajte unutrašnjost vašeg doma
+      </h3>
+    </div>
+
+    <div class="flex row-start-2 col-span-4">
+      <div>
+        <Picture
+          src="/designer.png"
+          alt=""
+          aspectRatio="4:3"
+          widths={[400, 800, 620]}
+          sizes="(min-width: 1280px) 50vw, 100vw"
+          loading="eager"
+          fit="cover"
+        />
+      </div>
+    </div>
+
+    <div class="row-start-2 col-start-1 col-span-4">
+      <div class="text-center mt-5 md:mt-0 md:text-left">
+        <div class="md:hidden">
+          <h2 class="font-bold text-3xl">Dizajn interijera</h2>
+          <h3 class="font-bold text-lg mt-3 capitalize">
+            Dizajnirajte unutrašnjost vašeg doma
+          </h3>
+        </div>
+
+        <div class="mt-8 md:mt-0">
+          <p>
+            Lorem ipsum dolor sit amet. Sit illo minus non dolores velit hic
+            dolores nulla ut cupiditate dolorem sit iusto vitae cum enim iusto.
+            Qui officia omnis sed dicta voluptas qui unde laboriosam At deserunt
+            omnis.
+          </p>
+
+          <p class="mt-4">
+            Et omnis nihil hic iure accusamus sed aspernatur veritatis. Sed
+            impedit quod qui quas cupiditate eum beatae inventore et commodi
+            nobis eos amet nobis At sapiente tempora.
+          </p>
+        </div>
+
+        <div class="my-7 h-[1px] w-full bg-[#9B9B9B]"></div>
+
+        <div class="flex items-center justify-center">
+          <div class="flex items-center mr-4">
+            <img
+              src="/user.svg"
+              alt=""
+              class="h-[24px] w-[24px] lg:h-[28px] lg:w-[28px] mr-2"
+            />
+            <p class="font-bold">Diana Russell</p>
+          </div>
+
+          <a
+            href="mailto:me@gmail.com"
+            class="inline-flex items-center px-4 py-2 text-sm font-bold border-2 text-white bg-tertiary rounded-lg"
+          >
+            <img
+              src="/designerPhone.svg"
+              alt=""
+              class="h-[14px] w-[14px] mr-2"
+            />
+            <span>Kontakt</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

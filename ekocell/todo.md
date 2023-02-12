@@ -17,3 +17,11 @@ Type: FIX => while image is being fetched category cards flicker, set a placehol
 Type: COMPONENT => create a reusable component for **specifikacije i prednosti** basically every object should have an array of pictures with appropriate text(**MARKDOWN**) with it {cm:2022-12-05}
 
 Type: TODO => after everything is over check ALL the animations and if needed make them better
+
+
+
+## NEW DESIGN TODO
+
+- questions: 
+    - Is it better if the mobile navigation is 2/3 of width like its on the design, or its maybe better if its whole width with the gradient color?
+    - Do we put phone or email in link button for a designer
